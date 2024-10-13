@@ -9,7 +9,7 @@ graph_attr = {
     "compound":"true",
 }
 
-with Diagram("", filename="home_networking", outformat="svg", show=False, graph_attr=graph_attr, direction="TB"):
+with Diagram("", filename="home_networking", show=False, graph_attr=graph_attr, direction="TB"):
     switch = Switch("Switch")
 
     with Cluster("10", graph_attr={"label": "VLAN10 (TRUSTED): 192.168.10.0/24"}):
