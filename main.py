@@ -12,7 +12,7 @@ graph_attr = {
 with Diagram("", filename="home_networking", show=False, graph_attr=graph_attr, direction="TB"):
     switch = Switch("Switch")
 
-    with Cluster("10", graph_attr={"label": "VLAN10 (TRUSTED): 192.168.10.0/24"}):
+    with Cluster("10", graph_attr={"label": "VLAN10: TRUSTED\n192.168.10.0/24"}):
         void = Custom("192.168.10.4", "./resources/void.png")
         vlan10 = [
             void,
@@ -20,7 +20,7 @@ with Diagram("", filename="home_networking", show=False, graph_attr=graph_attr, 
             Custom("Trusted WiFi", "./resources/ap_unifi.png")
         ]
     
-    with Cluster("42", graph_attr={"label": "VLAN42 (SERVERS): 192.168.42.0/24"}):
+    with Cluster("42", graph_attr={"label": "VLAN42: SERVERS\n192.168.42.0/24"}):
 
         with Cluster("K8s"):
             k8s = [
@@ -38,22 +38,22 @@ with Diagram("", filename="home_networking", show=False, graph_attr=graph_attr, 
         ]
     
     
-    with Cluster("50", graph_attr={"label": "VLAN50 (GUEST): 192.168.50.0/24"}):
+    with Cluster("50", graph_attr={"label": "VLAN50: GUEST\n192.168.50.0/24"}):
         vlan50 = [
             Custom("Guest WiFi", "./resources/ap_unifi.png"),
         ]
 
-    with Cluster("70", graph_attr={"label": "VLAN70 (IOT): 192.168.70.0/24"}):
+    with Cluster("70", graph_attr={"label": "VLAN70: IOT\n192.168.70.0/24"}):
         vlan70 = [
             Custom("FireTV", "./resources/firetv.png")
         ]
     
-    with Cluster("90", graph_attr={"label": "VLAN90 (CCTV): 192.168.90.0/24"}):
+    with Cluster("90", graph_attr={"label": "VLAN90: CCTV\n192.168.90.0/24"}):
         vlan90 = [
             Custom("CCTV", "./resources/cctv.png")
         ]
     
-    with Cluster("100", graph_attr={"label": "VLAN100 (VPN): 192.168.100.0/24"}):
+    with Cluster("100", graph_attr={"label": "VLAN100: VPN\n192.168.100.0/24"}):
         vlan100 = [
             Custom("WireGuard", "./resources/wireguard.svg")
         ]
