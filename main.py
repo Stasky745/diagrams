@@ -13,7 +13,7 @@ with Diagram("", filename="home_networking", show=False, graph_attr=graph_attr, 
     switch = Switch("Switch")
 
     with Cluster("10", graph_attr={"label": "VLAN10 (TRUSTED): 192.168.10.0/24"}):
-        void = Custom("PC: 192.168.10.4", "./resources/void.png")
+        void = Custom("192.168.10.4", "./resources/void.png")
         vlan10 = [
             void,
             Custom("WorkLaptop", "./resources/macbook.png"),
