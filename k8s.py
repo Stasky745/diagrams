@@ -53,10 +53,11 @@ with Diagram("", filename="k8s", show=False, graph_attr=graph_attr, direction="T
                 ]
 
         with Cluster("3", graph_attr={"label": "", "style": "invisible"}):
-            with Cluster("firefly"):
+            with Cluster("management"):
                 firefly = [
                     Custom("Firefly III", "./resources/fireflyiii.png"),
-                    #Custom("", "./resources/wallos.png")
+                    Custom("", "./resources/wallos.png"),
+                    Custom("", "./resources/snipe-it.png")
                 ]
 
             with Cluster("wiki"):
