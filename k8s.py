@@ -56,6 +56,7 @@ with Diagram("", filename="k8s", show=False, graph_attr=graph_attr, direction="T
             with Cluster("firefly"):
                 firefly = [
                     Custom("Firefly III", "./resources/fireflyiii.png"),
+                    #Custom("", "./resources/wallos.png")
                 ]
 
             with Cluster("wiki"):
