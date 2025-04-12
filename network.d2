@@ -1,0 +1,143 @@
+internet: Internet {
+    shape: cloud
+    width: 400
+    height: 200
+}
+
+backblaze: Backups {
+    shape: image
+    icon: ./resources/backblaze.svg
+    width: 200
+    height: 80
+}
+
+isp: ISP Router {
+    shape: image
+    icon: https://icons.terrastruct.com/tech%2Frouter.svg
+}
+
+df: Router {
+    shape: image
+    icon: https://darkflows.com/darkflows-logo.svg
+    width: 200
+    height: 80
+}
+
+ap: Access Point {
+    shape: image
+    icon: ./resources/ap_unifi.png
+}
+
+sw1: Managed Switch {
+    shape: image
+    icon: ./resources/switch.png
+}
+
+vlan42: VLAN-42{
+    sw2: Switch {
+        shape: image
+        icon: ./resources/switch.png
+    }
+
+    k8s: K8s Cluster {
+        Talos1: {
+            shape: image
+            icon: ./resources/talos.svg
+        }
+        Talos2: {
+            shape: image
+            icon: ./resources/talos.svg
+        }
+        Talos3: {
+            shape: image
+            icon: ./resources/talos.svg
+        }
+    }
+    
+    nas: TrueNAS {
+        shape: image
+        icon: ./resources/nas.png
+    }
+    
+    pi: ServiceBox {
+        shape: image
+        icon: ./resources/pi.png
+    }
+
+    sw2--t
+    sw2--nas
+    sw2--pi
+}
+
+vlan66: VLAN-66 {
+    windows: Gaming PC {
+        shape: image
+        icon: https://icons.terrastruct.com/dev%2Fwindows.svg
+    }
+}
+
+vlan10: VLAN-10 {
+    void: 192.168.10.4 {
+        shape: image
+        icon: ./resources/void.png
+    }
+
+    mac: Work Laptop {
+        shape: image
+        icon: ./resources/macbook.png
+    }
+}
+
+vlan50: VLAN-50 {
+    phone: Guests {
+        shape: image
+        icon: https://icons.terrastruct.com/tech%2F052-smartphone-3.svg
+    }
+}
+
+vlan70: VLAN-70 {
+    firetv: FireTV {
+        shape: image
+        icon: ./resources/firetv.png
+    }
+}
+
+internet--isp: {
+    style: {
+        stroke-dash: 3
+    }
+}
+
+isp--df--sw1
+
+ap--vlan10.mac: {
+    style: {
+        stroke-dash: 3
+    }
+}
+
+ap--vlan50: {
+    style: {
+        stroke-dash: 3
+    }
+}
+
+sw1--vlan66.windows
+sw1--vlan10.void
+sw1--vlan42.sw2
+sw1--vlan70.firetv
+
+sw1--ap
+
+vlan10.void --> vlan66.windows: {
+    style: {
+        stroke-dash: 3
+    }
+    tooltip: Sunshine / Moonlight
+}
+
+vlan42.k8s --> backblaze: {
+    style: {
+        stroke-dash: 3
+    }
+}
