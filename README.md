@@ -13,7 +13,7 @@
 
 ───── &rarr; Cable
 
-─ ─ ─ &rarr; WiFi
+─ ─ ─ ─ &rarr; WiFi
 
 ## Home Network Diagram
 ![Home Networking Diagram](./network.svg)
